@@ -7,86 +7,94 @@
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Assignment 1</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Assignment 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-    <!-- jQuery UI stylesheet  -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <!-- jQuery UI stylesheet  -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- endbuild -->
-</head>
-<body>
-    <!--[if lt IE 10]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-        your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <div class="main-container" style="margin-top:10px;">
+        <link rel="stylesheet" href="css/custom.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+            your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="main-container" style="margin-top:10px;">
 
-        <header>
-            <h1>Responsive HTML5 Video</h1>
-        </header>
+            <header>
+                <h1>Responsive HTML5 Video</h1>
+            </header>
 
-        <section id="video-section">
-            <h2 class="hidden">Video Section</h2>
+            <section id="video-section">
+                <h2 class="hidden">Video Section</h2>
 
-            <div id="media-player">
+                <div id="media-player">
 
-                <video id="videoPlayer" preload="none" poster="image.PNG" controls>
-                    <source src="movie.mp4" type="video/mp4" />
-                    <source src="movie.ogg" type="video/ogg" />
-                    Your browser does not support the video element.
-                </video>
+                    <video id="videoPlayer" preload="none" poster="image.PNG" controls>
+                        <source src="movie.mp4" type="video/mp4" />
+                        <source src="movie.ogg" type="video/ogg" />
+                        Your browser does not support the video element.
+                    </video>
 
-                <div class="media-controls">
+                    <div class="media-controls">
 
-                    <div id="playControls">
-                        <button type="button" class="btn glyphicon glyphicon-play" id="play_btn"></button>
-                        <button type="button" class="btn glyphicon glyphicon-stop" id="stop_btn"></button>
+                        <div id="playControls">
+                            <button type="button" class="btn glyphicon glyphicon-play" id="play_btn"></button>
+                            <button type="button" class="btn glyphicon glyphicon-stop" id="stop_btn"></button>
+                        </div>
+
+                        <div id="progressContainer">
+                            <span id='progress-bar' class="progress-bar" role="progressbar" aria-valuenow="0"  aria-valuemin="0" aria-valuemax="100"></span>
+                        </div>
+
+                        <div id="timeContainer">
+                            <span id='currentTime'>00:00</span>
+                        </div>
+
+                        <div id="volumeControls">
+                            <!--<span class="tooltip"></span>-->
+                            <div id="sliderContainer"><div id="slider"></div></div>
+                            <!--<span class="volume"></span>-->
+                            <button id='volumeInc_btn' class="btn glyphicon glyphicon-volume-up"></button>
+                            <button id='replay_btn' class="btn glyphicon glyphicon-repeat" title='replay'></button>
+                        </div>
                     </div>
-
-                    <div id="progressContainer">
-                         <span id='progress-bar' class="progress-bar" role="progressbar" aria-valuenow="0"  aria-valuemin="0" aria-valuemax="100"></span>
-                    </div>
-
-                    <div id="timeContainer">
-                        <span id='currentTime'>00:00</span>
-                    </div>
-
-                    <div id="volumeControls">
-                        <!--<span class="tooltip"></span>-->
-                        <div id="sliderContainer"><div id="slider"></div></div>
-                        <!--<span class="volume"></span>-->
-                        <button id='volumeInc_btn' class="btn glyphicon glyphicon-volume-up"></button>
-                        <button id='replay_btn' class="btn glyphicon glyphicon-repeat" title='replay'></button>
-                    </div>
-
+                    <div id="includedContent"></div>
                 </div>
 
-            </div>
+            </section>
+        </div>
 
-        </section>
-    </div>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-    <!-- jQuery -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- jQuery UI (for sliders)  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
-    <!-- jQuery UI (for sliders)  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-  	<!-- Bootstrap Core JavaScript -->
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-  	<!-- Custom Javascript -->
-  	<script src="js/script.js"></script>
+        <!-- Custom Javascript -->
+        <script src="js/script.js"></script>
+        <script src="js/like-dislike.js"></script>
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+        <script> 
+            $(function(){
+                $("#includedContent").load("like.html"); 
+            });
+        </script> 
     </body>
 </html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery like-dislike Plugin Demo</title>
+<link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div id="demo">
+    <button class="btn like btn-danger"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Like <span class="likes">0</span></button>
+    <button class="btn dislike btn-warning"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> Dislike <span class="dislikes">0</span></button>
+  </div>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+<script src="js/like-dislike.js"></script> 
+<script>
+$('#demo').likeDislike({
+       reverseMode: true,
+        disabledClass: 'disable',
+        click: function (value, btnType, event) {
+            var likes = $(this).find('.likes');
+            var dislikes = $(this).find('.dislikes');
+            value === 1 ? likes.text('1') : likes.text('0');
+            value === -1 ? dislikes.text('1') : dislikes.text('0');
+        }
+    });
+</script>
+</body>
+</html>
