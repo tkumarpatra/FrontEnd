@@ -1,0 +1,76 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Assignment 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="custom.css">
+	</head>
+	<body>
+		<div class="main-container" style="margin-top:10px;">
+			<header>
+                <h1>Responsive HTML5 Video</h1>
+            </header>
+		</div>
+		<section id="video-section">
+			<div id="media-player">
+				<figure id="video_player">
+					<video id="videoPlayer" preload="none" poster="image1.PNG" controls>
+						<source src="video1.mp4" type="video/mp4" />
+						<source src="movie.ogg" type="video/ogg" />
+						Your browser does not support the video element.
+					</video>
+					<div class="media-controls">
+						<div id="playControls">
+							<button type="button" class="btn glyphicon glyphicon-play" id="play_btn"></button>
+							<button type="button" class="btn glyphicon glyphicon-stop" id="stop_btn"></button>
+						</div>
+						<div id="progressContainer">
+							<span id='progress-bar' class="progress-bar" role="progressbar" aria-valuenow="0"  aria-valuemin="0" aria-valuemax="100"></span>
+						</div>
+						<div id="timeContainer">
+							<span id='currentTime'>00:00</span>
+						</div>
+						<div id="volumeControls">
+							<!--<span class="tooltip"></span>-->
+							<div id="sliderContainer"><div id="slider"></div></div>
+							<!--<span class="volume"></span>-->
+							<button id='volumeInc_btn' class="btn glyphicon glyphicon-volume-up"></button>
+							<button id='replay_btn' class="btn glyphicon glyphicon-repeat" title='replay'></button>
+							<button id="likeVideo" class="btn btn-default" onclick="likeVideo()">
+								<span class="glyphicon glyphicon-thumbs-up"></span><!--&gt;-->
+								<label id="likebutton"></label>
+							</button>
+							<button id="unlikeVideo" class="btn btn-default" onclick="unlikeVideo()">
+								<span class="glyphicon glyphicon-thumbs-down"></span><!--&gt;-->
+								<label id="unlikebutton"></label>
+							</button>
+						</div>
+					</div>
+				</figure>
+			</div>
+		</section>
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="script_video.js"></script>
+		<script src="script_like.js"></script>
+	</body>
+</html>
