@@ -16,7 +16,8 @@
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-		<link rel="stylesheet" href="custom.css">
+		<link rel="stylesheet" href="videoplayer.css">
+		<link rel="stylesheet" href="playlist.css">
 	</head>
 	<body>
 		<div class="main-container" style="margin-top:10px;">
@@ -27,8 +28,8 @@
 		<section id="video-section">
 			<div id="media-player">
 				<figure id="video_player">
-					<video id="videoPlayer" preload="none" poster="image1.PNG" controls>
-						<source src="video1.mp4" type="video/mp4" />
+					<video id="videoPlayer" preload="none" poster="iceland_image.PNG" controls>
+						<source src="iceland.mp4" type="video/mp4" />
 						<source src="movie.ogg" type="video/ogg" />
 						Your browser does not support the video element.
 					</video>
@@ -44,21 +45,24 @@
 							<span id='currentTime'>00:00</span>
 						</div>
 						<div id="volumeControls">
-							<!--<span class="tooltip"></span>-->
 							<div id="sliderContainer"><div id="slider"></div></div>
-							<!--<span class="volume"></span>-->
 							<button id='volumeInc_btn' class="btn glyphicon glyphicon-volume-up"></button>
 							<button id='replay_btn' class="btn glyphicon glyphicon-repeat" title='replay'></button>
 							<button id="likeVideo" class="btn btn-default" onclick="likeVideo()">
-								<span class="glyphicon glyphicon-thumbs-up"></span><!--&gt;-->
+								<span class="glyphicon glyphicon-thumbs-up"></span>
 								<label id="likebutton"></label>
 							</button>
 							<button id="unlikeVideo" class="btn btn-default" onclick="unlikeVideo()">
-								<span class="glyphicon glyphicon-thumbs-down"></span><!--&gt;-->
+								<span class="glyphicon glyphicon-thumbs-down"></span>
 								<label id="unlikebutton"></label>
 							</button>
 						</div>
 					</div>
+					<figcaption>
+						<a href="iceland.mp4"><img alt="Iceland Image" src="iceland_image.PNG"></a>
+						<a href="costaRica.mp4"><img alt="Costa Rica" src="costaRica_image.PNG"></a>
+						<a href="greenland.mp4"><img alt="greenland" src="greenland_image.PNG"></a>
+					</figcaption>
 				</figure>
 			</div>
 		</section>
@@ -72,5 +76,6 @@
         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="script_video.js"></script>
 		<script src="script_like.js"></script>
+		<script src="playlist.js"></script>
 	</body>
 </html>
